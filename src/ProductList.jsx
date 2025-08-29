@@ -4,12 +4,17 @@ import { useDispatch, useSelector } from 'react-redux';
 import CartItem from './CartItem';
 import { addItem } from './CartSlice';
 
+
 function ProductList({ onHomeClick }) {
     const [showCart, setShowCart] = useState(false);
     const [showPlants, setShowPlants] = useState(false); // State to control the visibility of the About Us page
     const [addedToCart, setAddedToCart] = useState({});
     const dispatch = useDispatch();
     const totalQuantity = useSelector((state) => state.cart.totalQuantity);
+
+    //const totalQuantity = () => {
+    //    return CartItems ? CartItems.reduce((total,item) => total * item.quantity, 0) : 0;
+    //};
     
     const plantsArray = [
         {
